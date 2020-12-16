@@ -1,0 +1,101 @@
+<div class="main-container">
+  <header class="header header-6">
+    <div class="branding">
+      <a class="nav-link">
+        <clr-icon size="30" shape="dna"></clr-icon>
+        <span class="title">Medical Info</span>
+      </a>
+    </div>
+
+
+    <div class="header-actions">
+      <clr-dropdown>
+        <button class="nav-icon" clrDropdownTrigger>
+          <clr-icon shape="user"></clr-icon>
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+
+          <a href="javascript:void(0);" routerLink = "/login" clrDropdownItem>
+          Logout</a>
+
+
+<!--          <a href="javascript:void(0);" (click)="logout()" clrDropdownItem>Log out</a>-->
+        </clr-dropdown-menu>
+      </clr-dropdown>    <!--adding it here -->
+    </div>
+
+
+
+  </header>
+
+
+
+
+  <div class="content-container">
+    <div class="content-area">
+
+
+
+      <div class="clr-row">
+
+        <div class="clr-col">
+
+          <div class="card">
+<!--            <div class="card-img">-->
+<!--              <img src="...">-->
+<!--            </div>-->
+<!--            <div class="card-block">-->
+<!--              <h4 class="card-title">Title</h4>-->
+<!--              <p class="card-text">-->
+<!--                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, aut.-->
+<!--                Nihil nemo, necessitatibus earum.-->
+<!--              </p>-->
+<!--            </div>-->
+            <ul class="list-group">
+              <li class="list-group-item">Patient Name</li>
+              <li class="list-group-item">Gender</li>
+              <li class="list-group-item">Age</li>
+              <li class="list-group-item">Height</li>
+              <li class="list-group-item">Weight</li>
+              <li class="list-group-item">Blood Type</li>
+              <li class="list-group-item">Allergy</li>
+              <li class="list-group-item">Condition</li>
+            </ul>
+<!--            <div class="card-footer">-->
+<!--              <a href="..." class="btn btn-sm btn-link">Details</a>-->
+              <clr-accordion>
+                <clr-accordion-panel>
+                  <clr-accordion-title>Details</clr-accordion-title>
+                  <clr-accordion-content *clrIfExpanded>
+
+                                  <a href="..." class="btn btn-sm btn-link">Details</a>
+
+                    Content 1</clr-accordion-content>
+                </clr-accordion-panel>
+
+              </clr-accordion>
+<!--            </div>-->
+          </div>
+
+        </div>
+        <div class="clr-col">
+          <span>SECOND CARD</span>
+        </div>
+
+<!--        <div class="clr-col">-->
+<!--          <span>1/5</span>-->
+<!--        </div>-->
+<!--        <div class="clr-col">-->
+<!--          <span>1/5</span>-->
+<!--        </div>-->
+<!--        <div class="clr-col">-->
+<!--          <span>1/5</span>-->
+<!--        </div>-->
+      </div>
+
+    </div>
+    <button class="btn btn-success">Add Card</button>
+
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<!--<h1>Login</h1>-->
+
+<!--Username-->
+<!--<input [(ngModel)]="username"> {{username}}-->
+<!--<br/>-->
+<!--Password-->
+<!--<input [(ngModel)]="password"> {{password}}-->
+<!--<br/>-->
+<!--<button (click)="login(username, password)">Login</button>-->
+
+
+
+<!--<a routerLink = "/register">-->
+<!--  Register</a>-->
+
+<!--<a routerLink = "/profile">-->
+<!--  Profile</a>-->
+
+<!--<a routerLink="/course">-->
+<!--  Courses</a>-->
+
+<div class="login-wrapper">
+  <form class="login">
+    <section class="title">
+      <h3 class="welcome">Welcome to</h3>
+      <clr-icon size="26" shape="dna"></clr-icon>
+      Medical Info
+<!--      <h5 class="hint">Use your Company ID to sign in or create one now</h5>-->
+    </section>
+    <div class="login-group">
+
+      <clr-input-container>
+        <label class="clr-sr-only">Username</label>
+        <input type="text" name="username" clrInput placeholder="Username" [(ngModel)]="username"/>
+      </clr-input-container>
+      <clr-password-container>
+        <label class="clr-sr-only">Password</label>
+        <input type="password" name="password" clrPassword placeholder="Password" [(ngModel)]="password"/>
+      </clr-password-container>
+      <clr-checkbox-wrapper>
+        <label>Remember me</label>
+        <input type="checkbox" name="rememberMe" clrCheckbox />
+      </clr-checkbox-wrapper>
+      <div class="error {{errorActive}}" >
+        {{errorMessage}}
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="login(username, password)">Login</button>
+
+      <a href="javascript://" class="signup" routerLink ="/register">No Account, No problem Click Here</a>
+
+      <a href="javascript://" class="signup" routerLink ="/forgotpassword">Forgot Password? Click Here</a>
+
+
+
+    </div>
+  </form>
+</div>
