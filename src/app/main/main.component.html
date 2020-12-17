@@ -23,14 +23,6 @@
 
   </header>
 
-    <ul class="list-group">
-        <li *ngFor="let patient of patients" class="list-group-item">
-            {{patient.name}}
-
-        </li>
-
-    </ul>
-
   <div class="content-container">
     <div class="content-area">
 
@@ -38,97 +30,68 @@
 
         <div class="clr-col">
 
-          <div class="card">
+          <div *ngFor="let patient of patients" class="card">
 
             <ul class="list-group">
 
-              <li *ngFor="let patient of patients"
-                  (click)="selectPatient(patient)"
-                  [ngClass]="{'text': patient.id == selectedPatient.id}"
-                  class="list-group-item">
+              <li class="list-group-item">
                 Patient Name: {{patient.name}}
               </li>
-                <li *ngFor="let patient of patients"
-                    (click)="selectPatient(patient)"
-                    [ngClass]="{'text': patient.id == selectedPatient.id}"
-                    class="list-group-item">
-                    Gender: {{patient.gender}}
+                <li class="list-group-item">
+                    Patient Name: {{patient.gender}}
                 </li>
-                <li *ngFor="let patient of patients"
-                    (click)="selectPatient(patient)"
-                    [ngClass]="{'text': patient.id == selectedPatient.id}"
-                    class="list-group-item">
-                    Age: {{patient.age}}
+                <li class="list-group-item">
+                    Patient Name: {{patient.age}}
                 </li>
-                <li *ngFor="let patient of patients"
-                    (click)="selectPatient(patient)"
-                    [ngClass]="{'text': patient.id == selectedPatient.id}"
-                    class="list-group-item">
-                    Height: {{patient.height}}
+                <li class="list-group-item">
+                    Patient Name: {{patient.height}}
                 </li>
-                <li *ngFor="let patient of patients"
-                    (click)="selectPatient(patient)"
-                    [ngClass]="{'text': patient.id == selectedPatient.id}"
-                    class="list-group-item">
-                    Weight: {{patient.weight}}
+                <li class="list-group-item">
+                    Patient Name: {{patient.weight}}
                 </li>
-                <li *ngFor="let patient of patients"
-                    (click)="selectPatient(patient)"
-                    [ngClass]="{'text': patient.id == selectedPatient.id}"
-                    class="list-group-item">
-                    Allergy: {{patient.allergy}}
+                <li class="list-group-item">
+                    Patient Name: {{patient.allergy}}
                 </li>
-                <li *ngFor="let patient of patients"
-                    (click)="selectPatient(patient)"
-                    [ngClass]="{'text': patient.id == selectedPatient.id}"
-                    class="list-group-item">
-                    Condition: {{patient.cond}}
+                <li class="list-group-item">
+                    Patient Name: {{patient.cond}}
                 </li>
-            </ul>
-<!--            <div class="card-footer">-->
-<!--              <a href="..." class="btn btn-sm btn-link">Details</a>-->
-              <clr-accordion>
-                <clr-accordion-panel>
-                  <clr-accordion-title>Details</clr-accordion-title>
-                  <clr-accordion-content *clrIfExpanded>
-<!--                    <p>Details about patient that cannot be categorized....</p>-->
+                <li class="list-group-item">
+                    <clr-accordion>
+                        <clr-accordion-panel>
+                            <clr-accordion-title>Details</clr-accordion-title>
+                            <clr-accordion-content *clrIfExpanded>
+                                <!--                    <p>Details about patient that cannot be categorized....</p>-->
 
-                    <form class="clr-form">
-                      <div class="clr-form-control">
-                        <label for="vertical-textarea-basic" class="clr-control-label">Patient details</label>
-                        <div class="clr-control-container">
-                          <div class="clr-textarea-wrapper">
-                            <textarea *ngFor="let patient of patients"
-                                      (click)="selectPatient(patient)"
-                                      [ngClass]="{'text': patient.id == selectedPatient.id}" rows="10" cols="100" id="vertical-textarea-basic" placeholder="Details about patient that cannot be categorized.... " class="clr-textarea">
+                                <form class="clr-form">
+                                    <div class="clr-form-control">
+                                        <label for="vertical-textarea-basic" class="clr-control-label">Patient details</label>
+                                        <div class="clr-control-container">
+                                            <div class="clr-textarea-wrapper">
+                            <textarea rows="10" cols="100" id="vertical-textarea-basic" placeholder="Details about patient that cannot be categorized.... " class="clr-textarea">
 
                             {{patient.details}}
 
                             </textarea>
-                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
-                          </div>
-                          <span class="clr-subtext">Helper Text</span>
-                        </div>
-                      </div>
-                    </form>
+                                                <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                            </div>
+                                            <span class="clr-subtext">Helper Text</span>
+                                        </div>
+                                    </div>
+                                </form>
 
+                            </clr-accordion-content>
+                        </clr-accordion-panel>
 
+                    </clr-accordion>
+                </li>
+            </ul>
 
-
-
-                  </clr-accordion-content>
-                </clr-accordion-panel>
-
-              </clr-accordion>
             <button class="btn btn-warning">Delete</button>
             <button class="btn btn-primary">Edit</button>
             <button class="btn btn-success">Save</button>
 <!--            </div>-->
           </div>
 
-        </div>
-        <div class="clr-col">
-          <span>SECOND CARD</span>
         </div>
 <!--        <div class="clr-col">-->
 <!--          <span>1/5</span>-->
