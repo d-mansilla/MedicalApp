@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
-import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import {MainComponent} from "./main/main.component";
 import {AuthguardServiceService} from "./security/authguard-service.service";
 import {AuthenticationGuard} from "./security/authentication.guard";
@@ -11,7 +10,6 @@ import {ForgetpasswordComponent} from './forgetpassword/forgetpassword.component
 
 
 const routes: Routes = [
-  { path: 'course', component: CourseNavigatorComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'main', component: MainComponent, canActivate: [AuthenticationGuard]},

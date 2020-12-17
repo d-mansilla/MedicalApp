@@ -13,17 +13,23 @@ export class MainComponent implements OnInit {
 
   constructor(private courseService: CourseService, public authenticationService: AuthenticationService) { }
 
-  courses: [];
-  selectedCourse = {
+  // patients: [];
+  // selectedPatient = {
+  //   // modules: []
+  // };
+
+  patients: [];
+  selectedPatient = {
     modules: []
   };
 
   ngOnInit(): void {
-    this.courseService.findAllCourses().then(courses => this.courses = courses);
+    this.courseService.findAllPatients().then(patients => this.patients = patients);
   }
 
-  selectCourse(course: never) {
-    this.selectedCourse = course;
+  // tslint:disable-next-line:typedef
+  selectPatient(patient: never) {
+    this.selectedPatient = patient;
 
   }
 

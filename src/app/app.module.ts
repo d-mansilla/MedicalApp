@@ -11,7 +11,7 @@ import { routing } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './services/user.service.client';
 import { CourseService } from './services/CourseService';
-import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
+
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './main/main.component';
@@ -28,7 +28,6 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
     LoginComponent,
     ProfileComponent,
     RegisterComponent,
-    CourseNavigatorComponent,
     MainComponent,
     DetailsComponent,
     ForgetpasswordComponent

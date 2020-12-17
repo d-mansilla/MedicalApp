@@ -23,6 +23,14 @@
 
   </header>
 
+    <ul class="list-group">
+        <li *ngFor="let patient of patients" class="list-group-item">
+            {{patient.name}}
+
+        </li>
+
+    </ul>
+
   <div class="content-container">
     <div class="content-area">
 
@@ -31,31 +39,51 @@
         <div class="clr-col">
 
           <div class="card">
-<!--            <div class="card-img">-->
-<!--              <img src="...">-->
-<!--            </div>-->
-<!--            <div class="card-block">-->
-<!--              <h4 class="card-title">Title</h4>-->
-<!--              <p class="card-text">-->
-<!--                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, aut.-->
-<!--                Nihil nemo, necessitatibus earum.-->
-<!--              </p>-->
-<!--            </div>-->
+
             <ul class="list-group">
-              <li class="list-group-item">Patient Name: </li>
-              <li *ngFor="let course of courses"
-                  (click)="selectCourse(course)"
-                  [ngClass]="{'text': course.id == selectedCourse.id}"
+
+              <li *ngFor="let patient of patients"
+                  (click)="selectPatient(patient)"
+                  [ngClass]="{'text': patient.id == selectedPatient.id}"
                   class="list-group-item">
-                crouse: {{course.title}}
+                Patient Name: {{patient.name}}
               </li>
-              <li class="list-group-item">Gender: </li>
-              <li class="list-group-item">Age</li>
-              <li class="list-group-item">Height</li>
-              <li class="list-group-item">Weight</li>
-              <li class="list-group-item">Blood Type</li>
-              <li class="list-group-item">Allergy</li>
-              <li class="list-group-item">Condition</li>
+                <li *ngFor="let patient of patients"
+                    (click)="selectPatient(patient)"
+                    [ngClass]="{'text': patient.id == selectedPatient.id}"
+                    class="list-group-item">
+                    Gender: {{patient.gender}}
+                </li>
+                <li *ngFor="let patient of patients"
+                    (click)="selectPatient(patient)"
+                    [ngClass]="{'text': patient.id == selectedPatient.id}"
+                    class="list-group-item">
+                    Age: {{patient.age}}
+                </li>
+                <li *ngFor="let patient of patients"
+                    (click)="selectPatient(patient)"
+                    [ngClass]="{'text': patient.id == selectedPatient.id}"
+                    class="list-group-item">
+                    Height: {{patient.height}}
+                </li>
+                <li *ngFor="let patient of patients"
+                    (click)="selectPatient(patient)"
+                    [ngClass]="{'text': patient.id == selectedPatient.id}"
+                    class="list-group-item">
+                    Weight: {{patient.weight}}
+                </li>
+                <li *ngFor="let patient of patients"
+                    (click)="selectPatient(patient)"
+                    [ngClass]="{'text': patient.id == selectedPatient.id}"
+                    class="list-group-item">
+                    Allergy: {{patient.allergy}}
+                </li>
+                <li *ngFor="let patient of patients"
+                    (click)="selectPatient(patient)"
+                    [ngClass]="{'text': patient.id == selectedPatient.id}"
+                    class="list-group-item">
+                    Condition: {{patient.cond}}
+                </li>
             </ul>
 <!--            <div class="card-footer">-->
 <!--              <a href="..." class="btn btn-sm btn-link">Details</a>-->
@@ -63,11 +91,38 @@
                 <clr-accordion-panel>
                   <clr-accordion-title>Details</clr-accordion-title>
                   <clr-accordion-content *clrIfExpanded>
+<!--                    <p>Details about patient that cannot be categorized....</p>-->
 
-                    <a href="..." class="btn btn-sm btn-link">Details</a>Content 1</clr-accordion-content>
+                    <form class="clr-form">
+                      <div class="clr-form-control">
+                        <label for="vertical-textarea-basic" class="clr-control-label">Patient details</label>
+                        <div class="clr-control-container">
+                          <div class="clr-textarea-wrapper">
+                            <textarea *ngFor="let patient of patients"
+                                      (click)="selectPatient(patient)"
+                                      [ngClass]="{'text': patient.id == selectedPatient.id}" rows="10" cols="100" id="vertical-textarea-basic" placeholder="Details about patient that cannot be categorized.... " class="clr-textarea">
+
+                            {{patient.details}}
+
+                            </textarea>
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext">Helper Text</span>
+                        </div>
+                      </div>
+                    </form>
+
+
+
+
+
+                  </clr-accordion-content>
                 </clr-accordion-panel>
 
               </clr-accordion>
+            <button class="btn btn-warning">Delete</button>
+            <button class="btn btn-primary">Edit</button>
+            <button class="btn btn-success">Save</button>
 <!--            </div>-->
           </div>
 
