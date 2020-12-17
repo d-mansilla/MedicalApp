@@ -7,35 +7,24 @@
       </a>
     </div>
 
-
     <div class="header-actions">
       <clr-dropdown>
+        <clr-icon shape="user"></clr-icon>
         <button class="nav-icon" clrDropdownTrigger>
-          <clr-icon shape="user"></clr-icon>
-          <clr-icon shape="caret down"></clr-icon>
         </button>
         <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
 
-          <a href="javascript:void(0);" routerLink = "/login" clrDropdownItem>
-          Logout</a>
-
+          <a href="javascript:void(0);" (click)="logout()" clrDropdownItem>Logout</a>
 
 <!--          <a href="javascript:void(0);" (click)="logout()" clrDropdownItem>Log out</a>-->
         </clr-dropdown-menu>
       </clr-dropdown>    <!--adding it here -->
     </div>
 
-
-
   </header>
-
-
-
 
   <div class="content-container">
     <div class="content-area">
-
-
 
       <div class="clr-row">
 
@@ -53,8 +42,14 @@
 <!--              </p>-->
 <!--            </div>-->
             <ul class="list-group">
-              <li class="list-group-item">Patient Name</li>
-              <li class="list-group-item">Gender</li>
+              <li class="list-group-item">Patient Name: </li>
+              <li *ngFor="let course of courses"
+                  (click)="selectCourse(course)"
+                  [ngClass]="{'text': course.id == selectedCourse.id}"
+                  class="list-group-item">
+                crouse: {{course.title}}
+              </li>
+              <li class="list-group-item">Gender: </li>
               <li class="list-group-item">Age</li>
               <li class="list-group-item">Height</li>
               <li class="list-group-item">Weight</li>
@@ -69,9 +64,7 @@
                   <clr-accordion-title>Details</clr-accordion-title>
                   <clr-accordion-content *clrIfExpanded>
 
-                                  <a href="..." class="btn btn-sm btn-link">Details</a>
-
-                    Content 1</clr-accordion-content>
+                    <a href="..." class="btn btn-sm btn-link">Details</a>Content 1</clr-accordion-content>
                 </clr-accordion-panel>
 
               </clr-accordion>
@@ -82,20 +75,11 @@
         <div class="clr-col">
           <span>SECOND CARD</span>
         </div>
-
 <!--        <div class="clr-col">-->
 <!--          <span>1/5</span>-->
-<!--        </div>-->
-<!--        <div class="clr-col">-->
-<!--          <span>1/5</span>-->
-<!--        </div>-->
-<!--        <div class="clr-col">-->
-<!--          <span>1/5</span>-->
-<!--        </div>-->
+<!-- TOD0 if we need more add it like the div above-->
       </div>
-
     </div>
     <button class="btn btn-success">Add Card</button>
-
   </div>
 </div>

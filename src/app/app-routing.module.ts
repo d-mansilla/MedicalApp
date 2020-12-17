@@ -7,15 +7,18 @@ import { CourseNavigatorComponent } from './course-navigator/course-navigator.co
 import {MainComponent} from "./main/main.component";
 import {AuthguardServiceService} from "./security/authguard-service.service";
 import {AuthenticationGuard} from "./security/authentication.guard";
+import {ForgetpasswordComponent} from './forgetpassword/forgetpassword.component';
 
 
 const routes: Routes = [
   { path: 'course', component: CourseNavigatorComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'main/:userId', component: MainComponent, canActivate: [AuthenticationGuard]},
+  { path: 'main', component: MainComponent, canActivate: [AuthenticationGuard]},
   { path: 'profile/:userId', component: ProfileComponent},
-  { path: '', component: LoginComponent}
+  { path: ' ', component: LoginComponent},
+  { path: 'forgotpassword', component: ForgetpasswordComponent},
+  { path: '**', redirectTo: ' '}
 ];
 
 export const routing = RouterModule.forRoot(routes);

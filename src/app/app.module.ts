@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './main/main.component';
 import {AuthguardServiceService} from "./security/authguard-service.service";
 import { DetailsComponent } from './details/details.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
 
 
@@ -29,7 +30,8 @@ import { DetailsComponent } from './details/details.component';
     RegisterComponent,
     CourseNavigatorComponent,
     MainComponent,
-    DetailsComponent
+    DetailsComponent,
+    ForgetpasswordComponent
   ],
   imports: [
     routing,

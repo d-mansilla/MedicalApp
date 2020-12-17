@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CourseService} from '../services/CourseService';
+import {AuthenticationService} from '../services/authentication/authentication.service';
 
 @Component({
   selector: 'app-main',
@@ -9,13 +11,24 @@ export class MainComponent implements OnInit {
   private routerLink: any;
 
 
-  constructor() { }
+  constructor(private courseService: CourseService, public authenticationService: AuthenticationService) { }
+
+  courses: [];
+  selectedCourse = {
+    modules: []
+  };
 
   ngOnInit(): void {
+    this.courseService.findAllCourses().then(courses => this.courses = courses);
+  }
+
+  selectCourse(course: never) {
+    this.selectedCourse = course;
+
   }
 
   logout(){
-    this.routerLink = "/login"
+    this.authenticationService.logout();
   }
 
 }
